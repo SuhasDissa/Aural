@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Aural Music</title>
+</head>
+
+<body>
+    <a class="curl" href="index.html"><img src="images/home.png" alt="" class="src"></a>
+    <div id="loader">
+        <div></div>
+    </div>
+    <div class="inputdevfixed">
+        <input type="text" id="search" placeholder="Search Songs"> <button class="button" type="button"
+            onclick="Search()" id="button">Search</button>
+    </div>
+    <div class="tablepadding">
+        <div id="tablediv">
+            <table id="recommended" class="result"></table>
+            <table id="result" class="result"></table>
+        </div>
+        <div id="playerdiv">
+            <div id="player">
+                <img id="thumb" src="">
+                <div>
+                    <h4 id="heading"></h4><audio id="audio" src="" controls autoplay></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/music.js"></script>
+</body>
+
+</html>

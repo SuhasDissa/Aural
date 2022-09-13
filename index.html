@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Aural Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-text"> <span class="coolfont">Aural Music</span> </div>
+        <div class="searchbox"><input class="searchinput" type="search" name="search" id="search"
+                placeholder="Search Music..."><button class="button" id="button">Search</button></div>
+    </div>
+    <div class="mainrow">
+        <ul id="menulist"> </ul>
+    </div>
+    <script>
+        search = name => { let phrase = document.getElementById("search").value; if (phrase) window.location.href = `player.html?s=${phrase}`; }
+        document.getElementById("button").addEventListener('click', search);
+        document.getElementById("search").addEventListener("keypress", function (event) { if (event.key === "Enter") search(); });
+    </script>
+</body>
+
+</html>
