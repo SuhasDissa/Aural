@@ -1,0 +1,223 @@
+@use 'main';
+
+html ::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    height: 100vh;
+}
+
+.inputdevfixed {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    @extend %glass;
+    padding: 12px 0px;
+    z-index: 9;
+
+    .button {
+        padding: 7px 30px;
+    }
+
+    input[type=text] {
+        all: unset;
+        width: auto;
+        box-sizing: border-box;
+        border-radius: 22px;
+        font-size: 16px;
+        padding: 9px 0px 9px 16px;
+        color: black;
+        width: 80%;
+        @extend %glass;
+        border: 2px solid transparent;
+        background: rgba(255, 255, 255, 0.685);
+
+        &:focus-visible {
+            border: 2px solid main.$button-color;
+        }
+    }
+}
+
+.tablepadding {
+    margin-top: 50px;
+    max-height: calc(100vh - 123px);
+    height: calc(100vh - 123px);
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    #tablediv {
+        @extend %glass;
+        height: fit-content;
+        max-height: 100%;
+        border-radius: 20px;
+        padding: 20px;
+        //display: none;
+        overflow: auto;
+        max-width: 90%;
+
+        .result {
+            display: block;
+            text-align: center;
+            width: 100%;
+
+            td {
+                padding: 8px;
+
+                .button {
+                    padding: 8px;
+                    background-color: unset;
+                    box-shadow: unset;
+                    color: main.$button-color;
+
+                    &:hover {
+                        color: main.$button-hov;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 20px;
+                }
+            }
+
+            tr {
+                background-color: transparent;
+                font-size: large;
+            }
+
+            th {
+                padding: 8px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                color: rgb(0, 0, 0);
+            }
+        }
+    }
+}
+
+#playerdiv {
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    padding: 11px;
+    display: none;
+
+    #player {
+        @extend %glass;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 25px;
+        border-radius: 20px;
+        width: 100%;
+        height: fit-content;
+
+        div {
+            text-align: center;
+            padding: 20px;
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+        }
+
+        #audio {
+            width: 100%;
+        }
+
+        #thumb {
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.596);
+        }
+    }
+
+}
+
+@media (orientation: portrait) {
+    .tablepadding {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #playerdiv {
+        height: fit-content;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+
+        #player {
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding: 15px;
+
+            div {
+                text-align: center;
+                padding: 20px;
+                height: 100%;
+                width: 100%;
+                display: inline-block;
+            }
+
+            #thumb {
+                display: inline-block;
+                border-radius: 10px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    #player {
+        height: 20%;
+
+        #thumb {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .result {
+        tr {
+            font-size: 11px;
+
+            .button {
+                font-size: 10px;
+                padding: 10px;
+            }
+        }
+
+        td {
+            img {
+                border-radius: 5px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .result tr {
+        font-size: 9px;
+
+        .button {
+            font-size: 7px;
+            padding: 5px;
+        }
+    }
+}

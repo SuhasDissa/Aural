@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+$accent-light: #f9eeff;
+$button-color: #ee1161;
+$button-hov: #f07ba6;
+$button-text: #ffffff;
+
+%glass {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background-image: url(../assets/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.button {
+    all: unset;
+    border-radius: 40px;
+    font-size: large;
+    text-align: center;
+
+    color: $button-text;
+    background-color: $button-color;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $button-hov;
+    }
+}

@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Aural Music</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="css/homepage.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
@@ -21,7 +21,7 @@
     <script>
         search = name => { let phrase = document.getElementById("search").value; if (phrase) window.location.href = `player.html?s=${phrase}`; }
         document.getElementById("button").addEventListener('click', search);
-        document.getElementById("search").addEventListener("keypress", function (event) { if (event.key === "Enter") search(); });
+        document.getElementById("search").addEventListener("keypress", e => (e.key === "Enter") && search());
     </script>
 </body>
 
