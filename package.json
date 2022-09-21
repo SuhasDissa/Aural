@@ -7,6 +7,7 @@
   "scripts": {
     "build:sass": "sass  --no-source-map src/sass:public/css",
     "copy:html": "copyfiles -u 1 ./src/*.html public",
+    "copy:other": "copyfiles -u 1 ./src/*.{ico,png,webmanifest} public",
     "copy:assets": "copyfiles -u 1 ./src/assets/**/* public",
     "copy:scripts": "copyfiles -u 1 ./src/scripts/**/* public",
     "copy": "npm-run-all --parallel copy:*",
