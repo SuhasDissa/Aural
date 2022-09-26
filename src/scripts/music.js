@@ -59,3 +59,5 @@ function Play(id, thumb, title) {
     }
 }
 if (phrase) { input.value = phrase; Search() }
+document.getElementById('audio').onplay = () => document.getElementById('thumb').style.animationPlayState = "running";
+document.getElementById('audio').onpause = () => document.getElementById('thumb').style.animationPlayState = "paused";

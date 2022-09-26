@@ -6,6 +6,7 @@ html ::-webkit-scrollbar {
 
 body {
     height: 100vh;
+    backdrop-filter: blur(12.5px);
 }
 
 .inputdevfixed {
@@ -53,11 +54,29 @@ body {
     justify-content: space-around;
     align-items: flex-start;
 
+    & ::-webkit-scrollbar {
+        display: unset;
+        width: 10px;
+    }
+
+    & ::-webkit-scrollbar-track {
+        background: #ffffff33;
+        backdrop-filter: blur(12.5px);
+    }
+
+    & ::-webkit-scrollbar-thumb {
+        background: rgba(136, 136, 136, 0.39);
+        backdrop-filter: blur(12.5px);
+        border-radius: 5px;
+
+        &:hover {
+            background: rgba(85, 85, 85, 0.411);
+        }
+    }
+
     #tablediv {
-        @extend %glass;
         height: fit-content;
         max-height: 100%;
-        border-radius: 20px;
         padding: 20px;
         //display: none;
         overflow: auto;
@@ -104,6 +123,12 @@ body {
     }
 }
 
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #playerdiv {
     height: 80vh;
     align-items: center;
@@ -112,13 +137,11 @@ body {
     display: none;
 
     #player {
-        @extend %glass;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         padding: 25px;
-        border-radius: 20px;
         width: 100%;
         height: fit-content;
 
@@ -136,8 +159,27 @@ body {
 
         #thumb {
             display: inline-block;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.596);
+            border-radius: 50%;
+            width: 12em;
+            height: 12em;
+            object-fit: cover;
+            animation: spin 10s linear infinite;
+            animation-play-state: paused;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.219);
+        }
+
+        .controls {
+            button {
+                all: unset;
+                padding: 20px;
+                border-radius: 50%;
+                color: white;
+                background-color: transparent;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.555);
+                }
+            }
         }
     }
 
@@ -174,7 +216,8 @@ body {
 
             #thumb {
                 display: inline-block;
-                border-radius: 10px;
+                width: 128px;
+                height: 128px;
             }
         }
     }

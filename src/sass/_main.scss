@@ -4,6 +4,7 @@ $accent-light: #f9eeff;
 $button-color: #ee1161;
 $button-hov: #f07ba6;
 $button-text: #ffffff;
+$backdrop-url: "../assets/bg.jpg";
 
 %glass {
     background: rgba(255, 255, 255, 0.25);
@@ -20,7 +21,7 @@ body {
 body {
     margin: 0;
     font-family: "Open Sans", sans-serif;
-    background-image: url(../assets/bg.jpg);
+    background-image: url($backdrop-url);
     background-attachment: fixed;
     background-size: cover;
 }
@@ -30,7 +31,7 @@ body {
     border-radius: 40px;
     font-size: large;
     text-align: center;
-
+    font-weight: bolder;
     color: $button-text;
     background-color: $button-color;
 
